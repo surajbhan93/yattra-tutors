@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/router";
-import { Lora } from "next/font/google";
+import { lora } from "@/lib/fonts";
 import apiClient from "@/lib/apiClient";
 import AdminDashboardLayout from "@/components/admin-dashboard/AdminDashboardLayout";
 import {
@@ -18,8 +18,6 @@ import {
   Download,
 } from "lucide-react";
 import * as XLSX from "xlsx";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"] });
 
 /* -------------------- COMPREHENSIVE CITY NORMALIZER -------------------- */
 const normalizeCity = (c: any): string => {

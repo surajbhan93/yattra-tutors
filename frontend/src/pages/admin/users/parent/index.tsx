@@ -1,12 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/router";
-import { Lora } from "next/font/google";
+import { lora } from "@/lib/fonts";
 import AdminDashboardLayout from "@/components/admin-dashboard/AdminDashboardLayout";
 import apiClient from "@/lib/apiClient";
 import { Search, Users, Eye, MapPin, Phone, Mail, Filter, RotateCcw, UserCircle2, Calendar, ArrowUpRight, Download } from "lucide-react";
 import * as XLSX from "xlsx";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"] });
 
 interface Parent {
   _id: string;

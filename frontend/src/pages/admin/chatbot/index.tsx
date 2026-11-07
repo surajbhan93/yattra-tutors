@@ -11,9 +11,7 @@ import LeadsTable from "@/components/admin-chatbot/LeadsTable";
 import ChatViewer from "@/components/admin-chatbot/ChatViewer";
 import PhoneSearch from "@/components/admin-chatbot/PhoneSearch";
 import AdminDashboardLayout from "@/components/admin-dashboard/AdminDashboardLayout";
-import { Lora } from "next/font/google";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"] });
+import { lora } from "@/lib/fonts";
 
 export default function AdminChatbotPage() {
   const [leads, setLeads] = useState<any[]>([]);

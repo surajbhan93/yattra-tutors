@@ -1,7 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import { DM_Sans } from "next/font/google";
-
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
+import { dmSans } from "@/lib/fonts";
 
 // ============================================================
 // TYPES

@@ -1,13 +1,10 @@
 import Link from 'next/link'; // Ensure Link is imported
 import { useRouter } from 'next/router';
 import React from 'react';
-import { Lora, DM_Sans } from 'next/font/google';
+import { lora, dmSans } from "@/lib/fonts";
 
 import Footer from '../../components/landing/Footer'; // Adjust path if needed
 import NavBar from '../../components/navbar/NavBar'; // Adjust path if needed
-
-const lora = Lora({ subsets: ['latin'], weight: ['500', '600'] });
-const dmSans = DM_Sans({ subsets: ['latin'], weight: ['400', '500', '600'] });
 
 // --- Data for Sub-Areas (Keep this updated or fetch from backend) ---
 const subAreasByCity: Record<string, string[]> = {

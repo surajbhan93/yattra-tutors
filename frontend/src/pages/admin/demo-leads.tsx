@@ -1,10 +1,8 @@
 import React, { useEffect, useState, useCallback } from "react";
 import Head from "next/head";
-import { Lora } from "next/font/google";
+import { lora } from "@/lib/fonts";
 import apiClient from "@/lib/apiClient";
 // import AdminSidebar from "@/components/admin-dashboard/AdminSidebar";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"] });
 
 interface DemoLeadItem {
   _id: string;

@@ -3,9 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import ParentDashboardLayout from '@/layouts/ParentDashboardLayout';
-import { Lora } from 'next/font/google';
-
-const lora = Lora({ subsets: ['latin'], weight: ['500', '600'] });
+import { lora } from "@/lib/fonts";
 
 export default function TutorDetailPage() {
   const router = useRouter();

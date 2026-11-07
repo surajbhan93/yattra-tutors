@@ -3,14 +3,11 @@
 import React from "react";
 import Image from "next/image";
 import { Gem, History, Target, MapPin, CheckCircle } from "lucide-react";
-import { Lora, DM_Sans } from "next/font/google";
+import { lora, dmSans } from "@/lib/fonts";
 
 import InvestorSection from "./InvestorSection";
 import PublicStudentCharts from "./PublicStudentCharts";
 import { PageMode } from "./types";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"], style: ["italic", "normal"] });
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 const pageMode: PageMode =
   process.env.NEXT_PUBLIC_INVESTOR_MODE === "true" ? "investor" : "public";

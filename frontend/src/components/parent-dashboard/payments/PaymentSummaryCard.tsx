@@ -11,9 +11,7 @@ import {
   Wallet,
   CalendarDays,
 } from "lucide-react";
-import { Lora } from "next/font/google";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"] });
+import { lora } from "@/lib/fonts";
 
 export default function PaymentSummaryCard() {
   const [data, setData] = useState<any>(null);

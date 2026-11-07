@@ -3,7 +3,7 @@ import Link from "next/link";
 import apiClient from "@/lib/apiClient";
 import AdminDashboardLayout from "@/components/admin-dashboard/AdminDashboardLayout";
 import Breadcrumb from "@/components/ui/Breadcrumb";
-import { Lora } from "next/font/google";
+import { lora } from "@/lib/fonts";
 import {
   DollarSign, TrendingUp, Zap, Users, CreditCard, Wallet,
   ArrowUpRight, ArrowDownRight, Activity, Calendar, Package,
@@ -14,8 +14,6 @@ import {
   BarChart, Bar, PieChart, Pie, Cell, AreaChart, Area,
   XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
 } from "recharts";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"] });
 
 /* ======================
    TYPES

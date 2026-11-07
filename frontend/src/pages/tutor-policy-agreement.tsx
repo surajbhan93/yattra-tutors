@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import NavBar from "@/components/navbar/NavBar";
 import Footer from "@/components/landing/Footer";
-import { Lora, DM_Sans } from "next/font/google";
+import { lora, dmSans } from "@/lib/fonts";
 import {
   ShieldCheck,
   Award,
@@ -18,9 +18,6 @@ import {
   Clock,
   Sparkles,
 } from "lucide-react";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600", "700"], style: ["italic", "normal"] });
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 const SECTION_NAV = [
   { href: "#revenue-sharing", label: "1. Revenue share & payments" },

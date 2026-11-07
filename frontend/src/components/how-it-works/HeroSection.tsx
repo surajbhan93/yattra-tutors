@@ -1,8 +1,5 @@
 import { Users, GraduationCap, ArrowRight } from "lucide-react";
-import { Lora, DM_Sans } from "next/font/google";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"], style: ["italic", "normal"] });
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600"] });
+import { lora, dmSans } from "@/lib/fonts";
 
 export default function HeroSection() {
   return (

@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
-import { Lora, DM_Sans } from "next/font/google";
+import { lora, dmSans } from "@/lib/fonts";
 
 import NavBar from "@/components/navbar/NavBar";
 import Footer from "@/components/landing/Footer";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"] });
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 const ResetPasswordPage = () => {
   const searchParams = useSearchParams();

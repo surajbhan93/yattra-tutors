@@ -34,9 +34,8 @@ import apiClient from "@/lib/apiClient";
 import { GetServerSideProps } from "next";
 import { resolveImage } from "@/lib/resolveImage";
 import toast from "react-hot-toast";
-import { Lora } from "next/font/google";
+import { lora } from "@/lib/fonts";
 
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"], style: ["italic", "normal"] });
 import ssrApi from "@/lib/ssrApi";
 import { generateTutorSEO, generateTutorFAQSchema, generateTutorPersonSchema, generateTutorSlug } from "@/lib/seo/generateTutorSEO";
 import TutorHero from "@/components/tutor/TutorHero";
@@ -234,7 +233,6 @@ apiClient
       .then((res) => setReviews(res.data.data || []))
       .finally(() => setReviewsLoading(false));
   }, [tutor?._id]);
-
 
   if (!tutor) {
     return <div className="p-10 text-center">Loading...</div>;

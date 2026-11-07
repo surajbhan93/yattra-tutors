@@ -3,10 +3,10 @@ import { useRouter } from "next/router";
 import TutorDashboardLayout from "@/components/tutor-dashboard/TutorDashboardLayout";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import api from "@/lib/apiClient";
-import { 
-  Users, Zap, TrendingUp, MapPin, BookOpen, DollarSign, 
+import {
+  Users, TrendingUp, MapPin, BookOpen, DollarSign,
   Clock, Star, Filter, Search, ChevronRight, AlertCircle,
-  Loader, Home, Video, LayoutDashboard, Target
+  Loader, Home, Video, LayoutDashboard, Target, CheckCircle2
 } from "lucide-react";
 import { useAuthStore } from "@/stores/useAuthStore";
 import toast from "react-hot-toast";
@@ -47,7 +47,6 @@ const TutorLeadsPage = () => {
   const { isLoggedIn, user } = useAuthStore();
   
   const [leads, setLeads] = useState<MatchedLead[]>([]);
-  const [creditBalance, setCreditBalance] = useState(0);
   const [loading, setLoading] = useState(true);
   const [filters, setFilters] = useState({
     subject: "",
@@ -70,16 +69,10 @@ const TutorLeadsPage = () => {
   const fetchData = async () => {
     try {
       setLoading(true);
-      
-      // Fetch leads and credits from the working API endpoints
-      const [leadsRes, creditsRes] = await Promise.all([
-        api.get("/leads/marketplace"),
-        api.get("/wallet/credits").catch(() => ({ data: { success: false, data: { availableCredits: 0 } } })),
-      ]);
-      
-      console.log("Leads Response:", leadsRes.data);
-      console.log("Credits Response:", creditsRes.data);
-      
+
+      // Fetch leads from the working API endpoint (fully free — no credits/wallet check)
+      const leadsRes = await api.get("/leads/marketplace");
+
       const leadsList = Array.isArray(leadsRes.data)
         ? leadsRes.data
         : Array.isArray(leadsRes.data?.data)
@@ -87,15 +80,6 @@ const TutorLeadsPage = () => {
         : [];
 
       setLeads(leadsList);
-      
-      // ✅ Fix: Extract availableCredits from the correct response structure
-      const creditData = creditsRes.data?.data || creditsRes.data;
-      const availableCredits = creditData?.availableCredits ?? 0;
-      
-      console.log("Credit Data:", creditData);
-      console.log("Available Credits:", availableCredits);
-      
-      setCreditBalance(availableCredits);
     } catch (error: any) {
       console.error("Failed to fetch marketplace data", error);
       toast.error(error.response?.data?.message || "Failed to load leads");
@@ -146,7 +130,7 @@ const TutorLeadsPage = () => {
         </div>
 
         {/* Stats Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
             <div className="flex items-center justify-between mb-2">
               <span className="text-sm text-gray-600">Available Leads</span>
@@ -154,16 +138,6 @@ const TutorLeadsPage = () => {
             </div>
             <div className="text-3xl font-bold text-gray-900">
               {loading ? "..." : leads.length}
-            </div>
-          </div>
-
-          <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-sm text-gray-600">Available Credits</span>
-              <Zap className="h-5 w-5 text-emerald-600" />
-            </div>
-            <div className="text-3xl font-bold text-gray-900">
-              {loading ? "..." : creditBalance}
             </div>
           </div>
 
@@ -351,9 +325,9 @@ const TutorLeadsPage = () => {
 
                     {/* Right Side */}
                     <div className="ml-6 text-right">
-                      <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-50 border border-purple-200 mb-3">
-                        <Zap className="h-4 w-4 text-purple-600" />
-                        <span className="text-sm font-bold text-purple-900">{lead.creditsRequired || 1} Credits</span>
+                      <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-50 border border-emerald-200 mb-3">
+                        <CheckCircle2 className="h-4 w-4 text-emerald-600" />
+                        <span className="text-sm font-bold text-emerald-900">Free</span>
                       </div>
                       <div className="text-xs text-gray-500 mb-3">
                         {lead.totalUnlocks || 0}/{lead.maxUnlocks || 10} unlocked

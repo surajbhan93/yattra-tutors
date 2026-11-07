@@ -1,8 +1,6 @@
 import React from "react";
-import { DM_Sans } from "next/font/google";
+import { dmSans } from "@/lib/fonts";
 import { city } from "@/components/seoIndia/locations/up/agra";
-
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 export const InternalLinks: React.FC = () => {
   const internalLinkBlocks = [

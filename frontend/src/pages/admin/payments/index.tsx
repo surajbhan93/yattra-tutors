@@ -2,9 +2,7 @@ import { useEffect, useState } from "react";
 import NavBar from "@/components/navbar/NavBar";
 import { getAllAdminPayments } from "@/lib/adminPayments.api";
 import AdminDashboardLayout from "@/components/admin-dashboard/AdminDashboardLayout";
-import { Lora } from "next/font/google";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"] });
+import { lora } from "@/lib/fonts";
 
 const StatusPill = ({ status }: { status: string }) => {
   const map: any = {

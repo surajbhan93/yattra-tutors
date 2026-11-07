@@ -16,10 +16,7 @@ import {
 import LocalSchema from "@/components/seo/LocalSchema";
 import { ArrowRight, Loader2 } from "lucide-react";
 import CountUp from "react-countup";
-import { Lora, DM_Sans } from "next/font/google";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600", "700"] });
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
+import { lora, dmSans } from "@/lib/fonts";
 
 /* ===============================
    TYPES

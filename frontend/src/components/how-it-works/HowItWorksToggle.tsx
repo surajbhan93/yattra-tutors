@@ -2,13 +2,10 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { motion, AnimatePresence } from "framer-motion";
 import { Users, GraduationCap, ShieldCheck, BookOpen, Wallet, BarChart3 } from "lucide-react";
-import { Lora, DM_Sans } from "next/font/google";
+import { lora, dmSans } from "@/lib/fonts";
 
 import ParentFlow from "./ParentFlow";
 import TutorFlow from "./TutorFlow";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"] });
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 type ViewType = "parent" | "tutor";
 

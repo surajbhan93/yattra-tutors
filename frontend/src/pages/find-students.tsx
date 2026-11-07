@@ -6,14 +6,11 @@ import {
   MapPin, BookOpen, Clock, DollarSign, ArrowRight, Loader, User, Phone, Filter, X,
   Eye, ChevronDown, Search, Sparkles, SlidersHorizontal, ArrowUpDown
 } from "lucide-react";
-import { Lora, DM_Sans } from "next/font/google";
+import { lora, dmSans } from "@/lib/fonts";
 import { useAuthStore } from "@/stores/useAuthStore";
 import api from "@/lib/apiClient";
 import Head from "next/head";
 import NavBar from "@/components/navbar/NavBar";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"], style: ["italic", "normal"] });
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 type Lead = {
   _id: string;

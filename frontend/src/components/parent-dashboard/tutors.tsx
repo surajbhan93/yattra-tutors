@@ -11,9 +11,7 @@ import {
   GraduationCap,
   CreditCard,
 } from "lucide-react";
-import { Lora } from "next/font/google";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"] });
+import { lora } from "@/lib/fonts";
 
 export default function StudentTutorsPage() {
   const [tutors, setTutors] = useState<any[]>([]);

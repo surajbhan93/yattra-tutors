@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
 import { Check, UserCheck, PhoneCall, ShieldCheck } from "lucide-react";
-import { Lora } from "next/font/google";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"] });
+import { lora } from "@/lib/fonts";
 
 type Props = {
   currentStep: number; // 1, 2, 3

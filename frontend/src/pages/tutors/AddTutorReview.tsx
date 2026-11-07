@@ -1,9 +1,7 @@
 import { useState } from "react";
 import apiClient from "@/lib/apiClient";
 import { motion } from "framer-motion";
-import { Lora } from "next/font/google";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"], style: ["italic", "normal"] });
+import { lora } from "@/lib/fonts";
 
 export default function AddTutorReview({ tutorId }: { tutorId: string }) {
   const [rating, setRating] = useState(5);

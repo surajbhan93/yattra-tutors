@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { Lora } from "next/font/google";
+import { lora } from "@/lib/fonts";
 import AdminDashboardLayout from "@/components/admin-dashboard/AdminDashboardLayout";
 import { Users, UserCircle2, TrendingUp, MapPin, CheckCircle, Clock, XCircle } from "lucide-react";
 import apiClient from "@/lib/apiClient";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"] });
 
 interface TutorStats {
   total: number;

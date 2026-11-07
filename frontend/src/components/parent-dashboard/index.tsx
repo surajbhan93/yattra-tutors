@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import ParentDashboardLayout from "@/layouts/ParentDashboardLayout";
 import { CreditCard, Smartphone } from "lucide-react";
-import { Lora } from "next/font/google";
+import { lora } from "@/lib/fonts";
 
 // Recharts
 import {
@@ -14,8 +14,6 @@ import {
   ResponsiveContainer,
   Tooltip,
 } from "recharts";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"] });
 
 export default function PaymentMethodsPage() {
   const cards: Array<{ brand: string; last4: string; exp: string }> = [];

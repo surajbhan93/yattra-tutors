@@ -6,10 +6,7 @@ import FilterSidebar from "@/components/filters/FilterSidebar";
 import MobileFilterDrawer from "@/components/filters/MobileFilterDrawer";
 import SubjectsGrid from "@/components/subjects/SubjectsGrid";
 import { GraduationCap, ShieldCheck, Star, ArrowRight, BookOpen, Users } from "lucide-react";
-import { Lora, DM_Sans } from "next/font/google";
-
-const lora = Lora({ subsets: ["latin"], weight: ["400", "500", "600", "700"], style: ["normal", "italic"] });
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600"] });
+import { lora, dmSans } from "@/lib/fonts";
 
 /* ======================
    LAZY LOAD SEO CONTENT

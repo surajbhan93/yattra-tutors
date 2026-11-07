@@ -13,7 +13,7 @@ import {
   Loader2,
 } from "lucide-react";
 import { motion, Variants, AnimatePresence } from "framer-motion";
-import { Lora, DM_Sans } from "next/font/google";
+import { lora, dmSans } from "@/lib/fonts";
 
 import Footer from "@/components/landing/Footer";
 import NavBar from "@/components/navbar/NavBar";
@@ -21,9 +21,6 @@ import TutorFilterPanel from "@/components/filters/TutorFilterPanel";
 import TutorSearchHero from "@/components/tutors/TutorSearchHero";
 import { filterTutors, DEFAULT_FILTERS, type TutorFilters } from "@/lib/filterTutor";
 import { resolveImage } from "@/lib/resolveImage";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"], style: ["italic", "normal"] });
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 /* ─────────────────────────────────────────────
    STATIC DATA (same as original)

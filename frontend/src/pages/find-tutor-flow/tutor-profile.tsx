@@ -1,11 +1,9 @@
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
-import { Lora } from 'next/font/google';
+import { lora } from "@/lib/fonts";
 
 import Button from '../../components/find-tutor-flow/Button';
 import Calendar from '../../components/find-tutor-flow/Calendar';
-
-const lora = Lora({ subsets: ['latin'], weight: ['500', '600'], style: ['italic', 'normal'] });
 
 const tutorData = {
   id: '1',

@@ -6,15 +6,14 @@ import {
   FaLinkedinIn,
   FaYoutube,
   FaTwitter,
+  FaWhatsapp,
   FaMapMarkerAlt,
   FaEnvelope,
   FaPhone,
   FaChevronDown,
 } from "react-icons/fa";
-import { Lora } from "next/font/google";
+import { lora } from "@/lib/fonts";
 import { useCookieConsentStore } from "@/stores/useCookieConsentStore";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600", "700"] });
 
 /* =======================
    DATA
@@ -285,6 +284,7 @@ const internationalSections = [
 ];
 
 const socialLinks = [
+  { icon: <FaWhatsapp />, href: "https://wa.me/916363453870", label: "WhatsApp" },
   { icon: <FaFacebookF />, href: "https://facebook.com", label: "Facebook" },
   { icon: <FaInstagram />, href: "https://www.instagram.com/yattratutors/", label: "Instagram" },
   { icon: <FaLinkedinIn />, href: "https://www.linkedin.com/company/mentorsetu/", label: "LinkedIn" },
@@ -350,9 +350,14 @@ const Footer = () => {
               <span className="flex items-center gap-2">
                 <FaEnvelope className="shrink-0 text-emerald-500" /> yattratutorial@gmail.com
               </span>
-              <span className="flex items-center gap-2">
+              <a
+                href="https://wa.me/916363453870"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 transition-colors hover:text-emerald-400"
+              >
                 <FaPhone className="shrink-0 text-emerald-500" /> +91-6363453870
-              </span>
+              </a>
             </div>
 
             {/* Socials */}

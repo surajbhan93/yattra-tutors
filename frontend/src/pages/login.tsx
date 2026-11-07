@@ -9,11 +9,8 @@ import Footer from "@/components/landing/Footer";
 import PasswordInput from "@/components/ui/PasswordInput";
 import apiClient from "@/lib/apiClient";
 import { useAuthStore } from "@/stores/useAuthStore";
-import { Lora, DM_Sans } from "next/font/google";
+import { lora, dmSans } from "@/lib/fonts";
 import { ShieldCheck, Users, GraduationCap } from "lucide-react";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"], style: ["italic", "normal"] });
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 const roles = ["Parent", "Tutor", "Admin"] as const;
 type Role = (typeof roles)[number];

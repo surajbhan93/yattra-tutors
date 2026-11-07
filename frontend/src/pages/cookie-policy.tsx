@@ -2,11 +2,8 @@ import Head from "next/head";
 import NavBar from "@/components/navbar/NavBar";
 import Footer from "@/components/landing/Footer";
 import { Cookie, Shield, BarChart3, Settings, Target, Calendar } from "lucide-react";
-import { Lora, DM_Sans } from "next/font/google";
+import { lora, dmSans } from "@/lib/fonts";
 import { PolicyHero, PolicyPageWrapper } from "@/components/common/PolicyLayout";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"], style: ["italic", "normal"] });
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 const COOKIE_TYPES = [
   { icon: Shield, title: "Necessary cookies", status: "Always active", desc: "These cookies are essential for the website to function properly. They enable basic features like page navigation, access to secure areas, and authentication.", examples: ["Session authentication cookies", "Security and fraud prevention", "Load balancing and performance"] },

@@ -2,12 +2,9 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, SlidersHorizontal, X, BookOpen } from "lucide-react";
 import type { Variants } from "framer-motion";
-import { Lora, DM_Sans } from "next/font/google";
+import { lora, dmSans } from "@/lib/fonts";
 import SubjectCard from "./SubjectCard";
 import { POPULAR_SUBJECTS, SUBJECT_CATEGORIES } from "@/lib/constants";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600", "700"] });
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 /* ======================
    CONFIG — untouched

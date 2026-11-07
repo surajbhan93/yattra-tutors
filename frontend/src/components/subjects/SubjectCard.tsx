@@ -2,9 +2,7 @@ import { useRouter } from "next/router";
 import { useCallback, useMemo } from "react";
 import { motion, Variants } from "framer-motion";
 import { GraduationCap, CheckCircle2, ArrowRight, Star } from "lucide-react";
-import { Lora } from "next/font/google";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600", "700"] });
+import { lora } from "@/lib/fonts";
 
 /* ======================
    UTILS — untouched

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Head from "next/head";
 import { motion, AnimatePresence } from "framer-motion";
-import { Lora, DM_Sans } from "next/font/google";
+import { lora, dmSans } from "@/lib/fonts";
 import FloatingChatButton from "@/components/common/FloatingChatButton";
 import {
   Mail,
@@ -24,9 +24,6 @@ import apiClient from "@/lib/apiClient";
 import Footer from "@/components/landing/Footer";
 import NavBar from "@/components/navbar/NavBar";
 import ContactSupportBar from "@/components/common/ContactSupportBar";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"], style: ["italic", "normal"] });
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 type ContactForm = { name: string; email: string; phone: string; message: string };
 

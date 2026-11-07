@@ -20,15 +20,12 @@ import {
   MessageCircle,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import { Lora, DM_Sans } from "next/font/google";
+import { lora, dmSans } from "@/lib/fonts";
 import NavBar from "@/components/navbar/NavBar";
 import Footer from "@/components/landing/Footer";
 import { ALLAHABAD_LOCATION_SNIPPETS } from "@/components/seo/content/allahabadLocationSnippets";
 import { ALLAHABAD_LOCATIONS } from "@/components/seo/seo.config";
 import AllahabadFAQSchema from "@/components/seo/Allahabad_FAQ";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"], style: ["italic", "normal"] });
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 /* =========================
    CONTACT & GBP CONFIG

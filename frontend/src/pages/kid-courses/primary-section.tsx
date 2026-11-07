@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import Head from 'next/head';
-import { Lora, DM_Sans } from 'next/font/google';
+import { lora, dmSans } from "@/lib/fonts";
 import NavBar from '@/components/navbar/NavBar';
 import Footer from '@/components/landing/Footer';
 import {
@@ -9,9 +9,6 @@ import {
   FaArrowLeft, FaStar, FaCheckCircle, FaRobot, FaBrain,
   FaLightbulb, FaSpinner, FaChevronRight, FaBookOpen,
 } from 'react-icons/fa';
-
-const lora = Lora({ subsets: ['latin'], weight: ['500', '600'], style: ['italic', 'normal'] });
-const dmSans = DM_Sans({ subsets: ['latin'], weight: ['400', '500', '600'] });
 
 /* ══════════════════════════════════════════════════════
    SEO Structured Data

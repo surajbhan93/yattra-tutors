@@ -15,9 +15,7 @@
 import { useState } from "react";
 import CountUp from "react-countup";
 import { ExternalLink, TrendingUp, Minus, MapPin, Flame, Star, TrendingUp as TrendingUpIcon } from "lucide-react";
-import { Lora } from "next/font/google";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"], style: ["italic", "normal"] });
+import { lora } from "@/lib/fonts";
 
 const FALLBACK_DEMAND = [
   20, 34, 40, 56, 10, 28, 45, 62,

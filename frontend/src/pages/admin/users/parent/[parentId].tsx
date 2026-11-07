@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { Lora } from "next/font/google";
+import { lora } from "@/lib/fonts";
 import AdminDashboardLayout from "@/components/admin-dashboard/AdminDashboardLayout";
 import apiClient from "@/lib/apiClient";
 import {
@@ -19,8 +19,6 @@ import {
   Clock,
   UserCircle2,
 } from "lucide-react";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"] });
 
 /* ======================
    TYPES

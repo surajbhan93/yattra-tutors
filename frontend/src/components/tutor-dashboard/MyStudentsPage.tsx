@@ -4,9 +4,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import apiClient from "@/lib/apiClient";
 import StudentCard, { StudentCardData } from "./StudentCard";
 import { Users, UserCheck, UserX, Search } from "lucide-react";
-import { Lora } from "next/font/google";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"] });
+import { lora } from "@/lib/fonts";
 
 /* ======================
    API TYPE

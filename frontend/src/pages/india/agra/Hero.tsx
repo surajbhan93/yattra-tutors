@@ -1,10 +1,7 @@
 import React, { useState } from "react";
-import { Lora, DM_Sans } from "next/font/google";
+import { lora, dmSans } from "@/lib/fonts";
 import { city } from "@/components/seoIndia/locations/up/agra";
 import apiClient from "@/lib/apiClient";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600", "700"], style: ["normal", "italic"] });
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 export const Hero: React.FC = () => {
   // Extract top 5 localities dynamically to feature in hero text snippet

@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
-import { Lora, DM_Sans } from "next/font/google";
+import { lora, dmSans } from "@/lib/fonts";
 
 import { CITY_MAP } from "@/components/seoIndia/cities";
 import { INTENTS } from "@/components/seoIndia/intents";
@@ -16,9 +16,6 @@ import NavBar from "@/components/navbar/NavBar";
 import Footer from "@/components/landing/Footer";
 import { PhoneCall } from "lucide-react";
 import { motion } from "framer-motion";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"], style: ["italic", "normal"] });
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 interface PageProps {
   citySlug: string;

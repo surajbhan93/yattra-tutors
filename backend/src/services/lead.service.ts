@@ -1,7 +1,5 @@
 import StudentLead, { IStudentLead } from "../models/StudentLead";
 import LeadUnlock, { ILeadUnlock } from "../models/LeadUnlock";
-import LeadCreditWallet from "../models/LeadCreditWallet";
-import CreditTransaction from "../models/CreditTransaction";
 import TutorConversion from "../models/TutorConversion";
 import User from "../models/User";
 import { Types } from "mongoose";
@@ -220,7 +218,9 @@ export class LeadService {
   }
 
   /**
-   * Unlock a lead (deduct credits)
+   * Unlock a lead
+   * ✅ FULLY FREE — no credit/wallet/payment gating of any kind.
+   * Any logged-in tutor can unlock any available lead at no cost.
    */
   async unlockLead(tutorId: string, leadId: string): Promise<ILeadUnlock> {
     const lead = await StudentLead.findById(leadId);
@@ -255,37 +255,11 @@ export class LeadService {
       throw new Error("You have already unlocked this lead");
     }
 
-    // Check credit balance
-    const wallet = await LeadCreditWallet.findOne({ tutorId: new Types.ObjectId(tutorId) });
-    if (!wallet || wallet.availableCredits < lead.creditsRequired) {
-      throw new Error("Insufficient credits. Please purchase more credits.");
-    }
-
-    // Deduct credits (free first, then purchased)
-    let creditsToDeduct = lead.creditsRequired;
-    let freeCreditsUsed = 0;
-    let purchasedCreditsUsed = 0;
-
-    if (wallet.freeCreditsAvailable && wallet.freeCreditsAvailable > 0) {
-      freeCreditsUsed = Math.min(creditsToDeduct, wallet.freeCreditsAvailable);
-      wallet.freeCreditsAvailable -= freeCreditsUsed;
-      creditsToDeduct -= freeCreditsUsed;
-    }
-
-    if (creditsToDeduct > 0) {
-      purchasedCreditsUsed = creditsToDeduct;
-      wallet.purchasedCreditsAvailable = (wallet.purchasedCreditsAvailable || 0) - purchasedCreditsUsed;
-    }
-
-    wallet.availableCredits -= lead.creditsRequired;
-    wallet.usedCredits += lead.creditsRequired;
-    await wallet.save();
-
-    // Create unlock record
+    // Create unlock record (free — no credits deducted)
     const unlock = await LeadUnlock.create({
       leadId: new Types.ObjectId(leadId),
       tutorId: new Types.ObjectId(tutorId),
-      creditsUsed: lead.creditsRequired,
+      creditsUsed: 0,
       status: "new",
       unlockedAt: new Date(),
     });
@@ -294,17 +268,6 @@ export class LeadService {
     lead.totalUnlocks += 1;
     if (lead.status === "new") lead.status = "active";
     await lead.save();
-
-    // Record transaction
-    await CreditTransaction.create({
-      tutorId: new Types.ObjectId(tutorId),
-      amount: 0,
-      credits: -lead.creditsRequired,
-      transactionType: "lead_unlock",
-      status: "completed",
-      description: `Unlocked lead: ${lead.subject} - ${lead.studentClass}`,
-      referenceId: (unlock._id as Types.ObjectId).toString(),
-    });
 
     return unlock;
   }

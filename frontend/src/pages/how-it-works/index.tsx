@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Lora, DM_Sans } from "next/font/google";
+import { lora, dmSans } from "@/lib/fonts";
 
 import HeroSection from "@/components/how-it-works/HeroSection";
 import HowItWorksToggle from "@/components/how-it-works/HowItWorksToggle";
@@ -7,9 +7,6 @@ import WhyYattraTutors from "@/components/how-it-works/WhyTutorEdge";
 import FAQ from "@/components/how-it-works/FAQ";
 import Footer from "@/components/landing/Footer";
 import NavBar from "@/components/navbar/NavBar";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"], style: ["italic", "normal"] });
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 export default function HowItWorksPage() {
   return (

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import CountUp from "react-countup";
 import { Loader2, Phone, Star, MapPin, ChevronDown, ChevronUp, ExternalLink, ShieldCheck, GraduationCap, BookOpen, Gift } from "lucide-react";
-import { Lora, DM_Sans } from "next/font/google";
+import { lora, dmSans } from "@/lib/fonts";
 
 import NavBar from "@/components/navbar/NavBar";
 import Footer from "@/components/landing/Footer";
@@ -15,9 +15,6 @@ import { city as banaras } from "@/components/seoIndia/locations/up/banaras";
 // import { city as meerut } from "@/components/seoIndia/locations/up/meerut";
 import { city as noida } from "@/components/seoIndia/locations/up/noida";
 import LocationsSection from "./Locationssection";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"], style: ["italic", "normal"] });
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 /* =========================
    CITY REGISTRY

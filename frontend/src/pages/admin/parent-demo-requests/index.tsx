@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/router";
-import { Lora, DM_Sans } from "next/font/google";
+import { lora, dmSans } from "@/lib/fonts";
 import {
   Search, Filter, Calendar, User, Mail, Phone, BookOpen,
   Clock, CheckCircle, XCircle, Eye, AlertCircle, TrendingUp,
@@ -9,9 +9,6 @@ import {
 
 import AdminDashboardLayout from "@/components/admin-dashboard/AdminDashboardLayout";
 import adminApi from "@/lib/adminApi";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"] });
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 /* ======================
    TYPES

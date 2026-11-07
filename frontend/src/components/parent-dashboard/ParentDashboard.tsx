@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 import apiClient from "@/lib/apiClient";
-import { Lora } from "next/font/google";
+import { lora } from "@/lib/fonts";
 
 import ParentDashboardLayout from "@/layouts/ParentDashboardLayout";
 import ParentTopBar from "@/components/parent-dashboard/ParentTopBar";
@@ -25,8 +25,6 @@ import {
   Legend,
   CartesianGrid,
 } from "recharts";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"] });
 
 /* ================= ANIMATIONS ================= */
 const fadeUp = {
@@ -80,7 +78,6 @@ export default function ParentDashboard() {
   pendingAssignments: 0,
   upcomingSession: "",
 });
-
 
   // useEffect(() => {
   //   Promise.all([
@@ -151,7 +148,6 @@ export default function ParentDashboard() {
   loadDashboard();
 }, []);
 
-
   if (loading) return <div className="p-4 text-sm text-[#58646C]">Loading dashboard…</div>;
   if (!parent) return null;
 
@@ -165,9 +161,6 @@ export default function ParentDashboard() {
   notificationsCount={0}
   onMenuClick={() => {}}
 />
-
-
-
 
         {/* HEADER */}
         <motion.div
@@ -261,7 +254,6 @@ export default function ParentDashboard() {
           ))}
         </motion.div>
 
-
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
   <div className="rounded-md border border-[#1C2B22]/10 bg-white p-4 text-center">
     <p className="text-xs text-[#58646C]">Students</p>
@@ -277,7 +269,6 @@ export default function ParentDashboard() {
     </p>
   </div>
 </div>
-
 
         {/* CHARTS ROW */}
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">

@@ -13,7 +13,6 @@ import {
   Menu,
   X,
   Target,
-  Zap,
   FileCheck,
 } from "lucide-react";
 import Image from "next/image";
@@ -22,9 +21,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import api from "@/lib/apiClient";
 import { resolveImage } from "@/lib/resolveImage";
-import { Lora } from "next/font/google";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"] });
+import { lora } from "@/lib/fonts";
 
 /* ======================
    NAV LINKS
@@ -77,11 +74,6 @@ const navLinks = [
     icon: ClipboardList,
   },
   {
-    href: "/tutor/subscription",
-    label: "Credits & Plans",
-    icon: Zap,
-  },
-  {
     href: "/tutor/earnings",
     label: "Earnings",
     icon: DollarSign,
@@ -120,7 +112,6 @@ export default function Sidebar() {
     fetchTutor();
   }, []);
 
-
   /* ======================
      SWIPE (MOBILE ONLY)
   ====================== */
@@ -145,9 +136,6 @@ export default function Sidebar() {
       document.removeEventListener("touchend", onTouchEnd);
     };
   }, []);
-
-
-
 
 // DEBUG (temporary)
 

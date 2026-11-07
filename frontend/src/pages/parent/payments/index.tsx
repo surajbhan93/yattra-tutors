@@ -3,9 +3,7 @@ import ParentPayments from "@/components/parent-dashboard/payments/ParentPayment
 import PaymentSummaryCard from "@/components/parent-dashboard/payments/PaymentSummaryCard";
 import ParentDashboardLayout from "@/layouts/ParentDashboardLayout";
 import { X } from "lucide-react";
-import { Lora } from "next/font/google";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"] });
+import { lora } from "@/lib/fonts";
 
 export default function ParentPaymentsPage() {
   const [showSummary, setShowSummary] = useState(false);

@@ -8,9 +8,7 @@ import {
   ResponsiveContainer,
   Tooltip,
 } from "recharts";
-import { Lora } from "next/font/google";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"] });
+import { lora } from "@/lib/fonts";
 
 /* ================= DATA ================= */
 const materials = [

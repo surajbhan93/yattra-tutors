@@ -3,10 +3,9 @@
 import { useState } from "react";
 import apiClient from "@/lib/apiClient";
 import ParentDashboardLayout from "@/layouts/ParentDashboardLayout";
-import { Lora } from "next/font/google";
+import { lora } from "@/lib/fonts";
 // import ParentTopBar from "@/components/parent-dashboard/ParentTopBar";
 
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"] });
 const inputClass = "w-full rounded-md border border-[#1C2B22]/15 px-3 py-2 text-sm text-[#1C2B22] outline-none focus:border-[#D79A2C]";
 
 export default function AddStudentPage() {

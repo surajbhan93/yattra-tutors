@@ -1,14 +1,12 @@
 // src/pages/find-tutor-flow/tutor-preferences.tsx
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
-import { Lora } from 'next/font/google';
+import { lora } from "@/lib/fonts";
 
 import Button from '../../components/find-tutor-flow/Button';
 import Checkbox from '../../components/find-tutor-flow/CheckBox';
 import RadioGroup from '../../components/find-tutor-flow/RadioGroup';
 import OnboardingStepper from '@/pages/find-tutor-flow/OnboardingStepper';
-
-const lora = Lora({ subsets: ['latin'], weight: ['500', '600'] });
 
 const subjects = ['Math', 'Science', 'English', 'History', 'Social Science', 'All Subject'];
 const classes = [

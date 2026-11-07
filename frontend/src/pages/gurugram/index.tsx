@@ -3,7 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Lora, DM_Sans } from "next/font/google";
+import { lora, dmSans } from "@/lib/fonts";
 import {
   MapPin,
   Phone,
@@ -28,9 +28,6 @@ import {
 import NavBar from "@/components/navbar/NavBar";
 import Footer from "@/components/landing/Footer";
 import { GURUGRAM_AREAS } from "@/lib/gurugram/gurugramAreas";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"], style: ["italic", "normal"] });
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 /* =========================
    CONSTANTS

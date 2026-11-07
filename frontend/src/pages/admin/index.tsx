@@ -5,11 +5,9 @@ import {
   UsersIcon,
 } from '@heroicons/react/24/outline';
 import React from 'react';
-import { Lora } from 'next/font/google';
+import { lora } from "@/lib/fonts";
 
 import StatsCard from '@/components/admin-dashboard/StatsCard';
-
-const lora = Lora({ subsets: ['latin'], weight: ['500', '600'] });
 
 const stats = [
   {

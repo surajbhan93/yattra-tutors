@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { Lora, DM_Sans } from "next/font/google";
+import { lora, dmSans } from "@/lib/fonts";
 import adminApi from "@/lib/adminApi";
 import AdminDashboardLayout from "@/components/admin-dashboard/AdminDashboardLayout";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"] });
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 export default function ParentProfilePage() {
   const router = useRouter();

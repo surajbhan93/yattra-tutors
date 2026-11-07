@@ -5,9 +5,7 @@ import NavBar from "@/components/navbar/NavBar";
 import Footer from "@/components/landing/Footer";
 import { CheckCircle, Clock, Bell, UserCheck, MessageCircle } from "lucide-react";
 import OnboardingStepper from "@/components/tutor-flow/OnboardingStepper";
-import { Lora } from "next/font/google";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"] });
+import { lora } from "@/lib/fonts";
 
 export default function ApplicationReceived() {
   const router = useRouter();

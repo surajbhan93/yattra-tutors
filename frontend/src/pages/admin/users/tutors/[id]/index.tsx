@@ -1,7 +1,7 @@
 
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { Lora } from "next/font/google";
+import { lora } from "@/lib/fonts";
 import apiClient from "@/lib/apiClient";
 import AdminDashboardLayout from "@/components/admin-dashboard/AdminDashboardLayout";
 import { resolveImage } from "@/lib/resolveImage";
@@ -22,8 +22,6 @@ import {
   CheckCircle,
   XCircle,
 } from "lucide-react";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"] });
 
 export default function TutorViewPage() {
   const router = useRouter();

@@ -6,9 +6,8 @@ import apiClient from "@/lib/apiClient";
 import ParentDashboardLayout from "@/layouts/ParentDashboardLayout";
 import ParentTopBar from "@/components/parent-dashboard/ParentTopBar";
 import { Pencil, AlertTriangle } from "lucide-react";
-import { Lora } from "next/font/google";
+import { lora } from "@/lib/fonts";
 
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"] });
 const inputClass = "w-full rounded-md border border-[#1C2B22]/15 px-3 py-2 text-sm text-[#1C2B22] outline-none focus:border-[#D79A2C]";
 
 export default function ParentProfilePage() {
@@ -160,8 +159,6 @@ const [uploading, setUploading] = useState(false);
             onMenuClick={() => {}}
           />
 
-
-
       {!isProfileComplete && (
   <div className="flex items-start gap-2 rounded-md border border-[#D79A2C]/30 bg-[#D79A2C]/10 p-4 text-sm text-[#8a5f18]">
     <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
@@ -171,7 +168,6 @@ const [uploading, setUploading] = useState(false);
     </span>
   </div>
 )}
-
 
       <div className="mx-auto mt-4 max-w-3xl space-y-6">
 

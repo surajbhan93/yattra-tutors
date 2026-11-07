@@ -3,10 +3,7 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Lora, DM_Sans } from "next/font/google";
-
-const lora = Lora({ subsets: ["latin"], weight: ["600", "700"] });
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "600", "700"] });
+import { lora, dmSans } from "@/lib/fonts";
 
 /* ═══════════════════════════════════════════════════════════════
    MEGA EMOJI POOLS — 1000+ emojis across many themed categories

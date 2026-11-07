@@ -29,6 +29,7 @@ import {
   Award,
   LogIn
 } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
 import { useAuthStore } from '@/stores/useAuthStore';
 import {
   CITIES_DATA,
@@ -539,6 +540,18 @@ export default function Navbar() {
 
           {/* ── Desktop CTA Buttons ── */}
           <div className="hidden md:flex items-center gap-2 lg:gap-2.5 flex-shrink-0">
+            {/* WhatsApp Click-to-Chat */}
+            <a
+              href="https://wa.me/916363453870"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Chat with us on WhatsApp"
+              aria-label="Chat with us on WhatsApp"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-[#25D366]/10 text-[#25D366] border border-[#25D366]/25 hover:bg-[#25D366] hover:text-white transition-all"
+            >
+              <FaWhatsapp size={18} />
+            </a>
+
             {/* Find Tutor CTA */}
             <Link href="/tutors">
               <button
@@ -767,6 +780,17 @@ export default function Navbar() {
 
             {/* Mobile CTAs */}
             <div className="flex flex-col gap-2.5 px-5 py-4 border-t border-slate-100 bg-slate-50/50">
+              <a
+                href="https://wa.me/916363453870"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full h-11 rounded-full bg-[#25D366] text-white font-bold shadow-xs hover:bg-[#1fb855] transition-all flex items-center justify-center gap-1.5 text-sm"
+              >
+                <FaWhatsapp size={17} />
+                <span>Chat on WhatsApp</span>
+              </a>
+
               <Link href="/tutors" onClick={() => setMobileMenuOpen(false)} className="w-full">
                 <button
                   type="button"

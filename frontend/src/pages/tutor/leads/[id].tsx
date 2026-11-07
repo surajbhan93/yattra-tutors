@@ -51,9 +51,9 @@ const LeadDetailPage = () => {
   const handleUnlock = async () => {
     if (!lead) return;
 
-    // Confirmation dialog
+    // Confirmation dialog — unlocking is completely free, no credits/payment involved
     const confirmed = window.confirm(
-      `This will cost ${lead.creditsRequired} credit${lead.creditsRequired !== 1 ? 's' : ''}. Do you want to proceed?`
+      "Request parent contact access for this lead? It will be sent to Admin for approval."
     );
 
     if (!confirmed) return;
@@ -146,11 +146,11 @@ const LeadDetailPage = () => {
               )}
             </div>
 
-            {/* Credit Cost */}
+            {/* Free Access Badge */}
             <div className="ml-6">
-              <div className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-amber-50 border-2 border-amber-200">
-                <Zap className="h-5 w-5 text-amber-600" />
-                <span className="text-lg font-bold text-amber-900">{lead.creditsRequired} Credit{lead.creditsRequired !== 1 ? 's' : ''}</span>
+              <div className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-emerald-50 border-2 border-emerald-200">
+                <CheckCircle2 className="h-5 w-5 text-emerald-600" />
+                <span className="text-lg font-bold text-emerald-900">Free to unlock</span>
               </div>
             </div>
           </div>
@@ -330,7 +330,7 @@ const LeadDetailPage = () => {
                     ) : (
                       <>
                         <Zap className="h-5 w-5" />
-                        Unlock for {lead.creditsRequired} Credit{lead.creditsRequired !== 1 ? 's' : ''}
+                        Request Contact Access (Free)
                       </>
                     )}
                   </button>
@@ -389,19 +389,14 @@ const LeadDetailPage = () => {
               </ul>
             </div>
 
-            {/* Buy Credits */}
-            <div className="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-xl p-6 border border-amber-200">
+            {/* Free Access Notice */}
+            <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl p-6 border border-emerald-200">
               <div className="text-center">
-                <Zap className="h-8 w-8 text-amber-600 mx-auto mb-3" />
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Need More Credits?</h3>
-                <p className="text-sm text-gray-600 mb-4">
-                  Get credits to unlock more student leads
+                <CheckCircle2 className="h-8 w-8 text-emerald-600 mx-auto mb-3" />
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">No credits needed</h3>
+                <p className="text-sm text-gray-600">
+                  All student leads are free to unlock. Browse as many as you like.
                 </p>
-                <Link href="/tutor/subscription">
-                  <button className="w-full px-6 py-3 rounded-lg bg-gradient-to-r from-amber-500 to-yellow-500 text-white font-semibold shadow-md hover:shadow-lg transition-all">
-                    View Plans
-                  </button>
-                </Link>
               </div>
             </div>
           </div>

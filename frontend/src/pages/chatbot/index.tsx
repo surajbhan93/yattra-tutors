@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
-import { Lora } from "next/font/google";
+import { lora } from "@/lib/fonts";
 import { Send, MessageCircle } from "lucide-react";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"] });
 
 type Option = { label: string; value: string };
 

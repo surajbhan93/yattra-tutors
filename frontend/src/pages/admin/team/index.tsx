@@ -2,9 +2,7 @@ import { useEffect, useState } from "react";
 import AdminDashboardLayout from "@/components/admin-dashboard/AdminDashboardLayout";
 import apiClient from "@/lib/adminApi";
 import toast from "react-hot-toast";
-import { Lora } from "next/font/google";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"] });
+import { lora } from "@/lib/fonts";
 
 /* ======================
    TYPES
@@ -18,7 +16,6 @@ interface TeamMember {
   linkedin?: string;
   isFounder?: boolean; // 👈 ADD
 }
-
 
 /* ======================
    PAGE
@@ -38,7 +35,6 @@ export default function AdminTeamPage() {
   linkedin: "",
   isFounder: false, // 👈 ADD
 });
-
 
   /* ======================
      FETCH TEAM
@@ -251,7 +247,6 @@ export default function AdminTeamPage() {
               />
               Set as founder
             </label>
-
 
               <div className="flex justify-end gap-3 pt-2">
                 <button

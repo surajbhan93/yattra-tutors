@@ -1,10 +1,8 @@
 import { useRouter } from 'next/router';
 import React from 'react';
-import { Lora } from 'next/font/google';
+import { lora } from "@/lib/fonts";
 
 import Button from '../../components/find-tutor-flow/Button';
-
-const lora = Lora({ subsets: ['latin'], weight: ['500', '600'] });
 
 const RequestSent: React.FC = () => {
   const router = useRouter();

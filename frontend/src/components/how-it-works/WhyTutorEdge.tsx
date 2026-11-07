@@ -1,8 +1,5 @@
 import { ShieldCheck, Users, BookOpen, Wallet, BarChart3, Star } from "lucide-react";
-import { Lora, DM_Sans } from "next/font/google";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"], style: ["italic", "normal"] });
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600"] });
+import { lora, dmSans } from "@/lib/fonts";
 
 const PARENT_POINTS = [
   { icon: ShieldCheck, strong: "Verified tutors:", text: "every tutor is phone-verified, interviewed, and approved by Yattra Tutors experts." },

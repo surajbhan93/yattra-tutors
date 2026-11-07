@@ -3,7 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
 import CountUp from "react-countup";
-import { Lora, DM_Sans } from "next/font/google";
+import { lora, dmSans } from "@/lib/fonts";
 import {
   Loader2, Star, Phone, MapPin, ShieldCheck, Clock,
   ArrowRight, Users, ChevronDown, BookOpen,
@@ -15,9 +15,6 @@ import Footer from "@/components/landing/Footer";
 import { KANPUR_LOCATIONS, LUCKNOW_LOCATIONS } from "@/components/seo/seo.config";
 
 import { CITIES_DATA, ORDERED_CITIES } from "@/lib/cityServicesData";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600", "700"], variable: "--font-lora" });
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-dm-sans" });
 
 /* =========================
    CITY CONFIG
@@ -280,8 +277,6 @@ export default function CityHubPage({ city }: Props) {
 
   const { googleBusinessUrl } = cityData;
 
-
-
   return (
     <>
       <Head>
@@ -453,7 +448,6 @@ export default function CityHubPage({ city }: Props) {
             <StatsRow tutorCount={cityData.tutorCount} />
           </div>
         </section>
-
 
         {/* for SEO  */}
         {/* SEO-only section — visually hidden, fully crawlable */}
@@ -932,7 +926,6 @@ export default function CityHubPage({ city }: Props) {
   </div>
 </main>
 
-
         {/* ========== HOW IT WORKS ========== */}
         <section className="bg-gradient-to-br from-[#F7F2E9] to-[#F7F2E9] py-20">
           <div className="max-w-7xl mx-auto px-6">
@@ -1087,7 +1080,6 @@ export default function CityHubPage({ city }: Props) {
           </div>
         </section>
 
-
         {/* ========== FINAL CTA BANNER ========== */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6">
@@ -1170,15 +1162,8 @@ export default function CityHubPage({ city }: Props) {
   );
 }
 
-// These cities have their own dedicated, custom-built page routes
-// (e.g. pages/allahabad, pages/delhi, pages/gurugram) which fully replace
-// this generic template for them, so they must not also be generated here.
-const DEDICATED_CITY_ROUTES = ['allahabad', 'delhi', 'gurugram'];
-
 export const getStaticPaths: GetStaticPaths = async () => ({
-  paths: ORDERED_CITIES
-    .filter((city) => !DEDICATED_CITY_ROUTES.includes(city))
-    .map((city) => ({ params: { city } })),
+  paths: ORDERED_CITIES.map((city) => ({ params: { city } })),
   fallback: 'blocking',
 });
 

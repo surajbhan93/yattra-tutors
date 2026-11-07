@@ -4,13 +4,11 @@ import type { ChangeEvent, FormEvent } from 'react';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import apiClient from '../../lib/apiClient';
-import { Lora } from 'next/font/google';
+import { lora } from "@/lib/fonts";
 
 import NavBar from '@/components/navbar/NavBar';
 import Footer from '@/components/landing/Footer';
 import OnboardingStepper from "@/components/tutor-flow/OnboardingStepper";
-
-const lora = Lora({ subsets: ['latin'], weight: ['500', '600'] });
 
 const VerifyPhone: NextPage = () => {
   const router = useRouter();

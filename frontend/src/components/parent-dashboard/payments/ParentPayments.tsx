@@ -6,9 +6,7 @@ import api from "@/lib/api";
 import { startParentPayment } from "./RazorpayCheckout";
 import { motion } from "framer-motion";
 import { IndianRupee, CheckCircle2, AlertCircle } from "lucide-react";
-import { Lora } from "next/font/google";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"] });
+import { lora } from "@/lib/fonts";
 
 export default function ParentPayments() {
   const [data, setData] = useState<any>(null);

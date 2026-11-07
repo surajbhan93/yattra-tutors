@@ -8,9 +8,7 @@ import {
 } from "lucide-react";
 import toast from "react-hot-toast";
 import Link from "next/link";
-import { Lora } from "next/font/google";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"] });
+import { lora } from "@/lib/fonts";
 
 type ContactAccessRequest = {
   unlockId: string;

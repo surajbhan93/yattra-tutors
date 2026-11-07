@@ -1,13 +1,10 @@
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import React, { useState } from "react";
-import { Lora, DM_Sans } from "next/font/google";
+import { lora, dmSans } from "@/lib/fonts";
 
 import NavBar from "@/components/navbar/NavBar";
 import Footer from "@/components/landing/Footer";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"], style: ["italic", "normal"] });
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 const ForgotPasswordPage = () => {
   const [email, setEmail] = useState("");

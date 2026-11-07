@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { Lora, DM_Sans } from "next/font/google";
+import { lora, dmSans } from "@/lib/fonts";
 import AdminDashboardLayout from "@/components/admin-dashboard/AdminDashboardLayout";
 import adminApi from "@/lib/adminApi";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"] });
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 /* ======================
    TYPES
@@ -54,13 +51,11 @@ interface DemoRequest {
   full_name: string;
   class_grade: string;
 
-
 };
 // 🔥 ADD THIS LINE
   studentDisplayName?: string | null;
 
 }
-
 
 /* ======================
    PAGE
@@ -97,7 +92,6 @@ const [selectedTutor, setSelectedTutor] = useState("");
     fetchRequest();
   }, [id]);
 
-
   // get tutors list
 
   useEffect(() => {
@@ -113,7 +107,6 @@ const [selectedTutor, setSelectedTutor] = useState("");
 
   fetchTutors();
 }, []);
-
 
 const assignTutor = async () => {
   try {
@@ -139,8 +132,6 @@ const assignTutor = async () => {
   }
 };
 
-
-
   /* ======================
      UPDATE STATUS
   ====================== */
@@ -163,8 +154,6 @@ const assignTutor = async () => {
     alert("Failed to update status");
   }
 };
-
-
 
   if (loading) {
     return (
@@ -275,7 +264,6 @@ const assignTutor = async () => {
   </p>
 )}
 
-
  {!request.tutor && (
   <div className="mt-3 space-y-2">
     <select
@@ -349,8 +337,6 @@ const assignTutor = async () => {
   </div>
 )}
 
-
-
         {/* Academic */}
 <div className="overflow-hidden rounded-md border border-[#0E211C]/10 bg-white">
   <div className="border-b border-[#0E211C]/10 bg-[#F7F2E9] px-5 py-2.5">
@@ -405,7 +391,6 @@ const assignTutor = async () => {
   </div>
 </div>
 
-
         {/* Actions */}
         <div className="overflow-hidden rounded-md border border-[#0E211C]/10 bg-white">
           <div className="border-b border-[#0E211C]/10 bg-[#F7F2E9] px-5 py-2.5">
@@ -438,7 +423,6 @@ const assignTutor = async () => {
     <b>Admin Note:</b> {request.adminNote}
   </div>
 )}
-
 
             <div>
               <button

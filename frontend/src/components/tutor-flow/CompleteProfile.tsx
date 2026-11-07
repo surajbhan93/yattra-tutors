@@ -5,9 +5,7 @@ import { useState } from 'react';
 import NavBar from '@/components/navbar/NavBar';
 import Footer from '@/components/landing/Footer';
 import { UserCircle } from 'lucide-react';
-import { Lora } from 'next/font/google';
-
-const lora = Lora({ subsets: ['latin'], weight: ['500', '600'] });
+import { lora } from "@/lib/fonts";
 
 type CompleteProfileForm = {
   bio: string;

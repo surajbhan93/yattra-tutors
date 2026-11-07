@@ -1,9 +1,6 @@
 import React from "react";
-import { Lora, DM_Sans } from "next/font/google";
+import { lora, dmSans } from "@/lib/fonts";
 import { city } from "@/components/seoIndia/locations/up/agra";
-
-const lora = Lora({ subsets: ["latin"], weight: ["600", "700"] });
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 export const Subjects: React.FC = () => {
   const subjectCategories = [

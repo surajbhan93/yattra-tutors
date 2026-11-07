@@ -521,8 +521,8 @@ const LeadDetailsModal = ({
             <span className="font-semibold text-slate-800 block capitalize">{lead.teachingMode}</span>
           </div>
           <div>
-            <span className="text-slate-400 block mb-0.5">Credits Used</span>
-            <span className="font-bold text-indigo-600 block">{unlock.creditsUsed} credits</span>
+            <span className="text-slate-400 block mb-0.5">Access</span>
+            <span className="font-bold text-emerald-600 block">Free</span>
           </div>
         </div>
 

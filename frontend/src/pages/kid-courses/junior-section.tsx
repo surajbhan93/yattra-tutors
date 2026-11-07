@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import React from 'react';
 import Head from 'next/head';
-import { Lora, DM_Sans } from 'next/font/google';
+import { lora, dmSans } from "@/lib/fonts";
 import NavBar from '@/components/navbar/NavBar';
 import Footer from '@/components/landing/Footer';
 import {
@@ -28,9 +28,6 @@ import {
   Users,
   BookMarked,
 } from 'lucide-react';
-
-const lora = Lora({ subsets: ['latin'], weight: ['500', '600'], style: ['italic', 'normal'] });
-const dmSans = DM_Sans({ subsets: ['latin'], weight: ['400', '500', '600'] });
 
 /* ─── DATA (content preserved, decorative color hooks dropped) ─── */
 const subjects = [

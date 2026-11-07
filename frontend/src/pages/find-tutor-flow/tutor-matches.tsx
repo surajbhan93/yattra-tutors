@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import React, { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 
-import { Lora } from 'next/font/google';
+import { lora } from "@/lib/fonts";
 
 import NavBar from '@/components/navbar/NavBar';
 import Footer from '@/components/landing/Footer';
@@ -10,8 +10,6 @@ import OnboardingStepper from '@/pages/find-tutor-flow/OnboardingStepper';
 
 import TutorPremiumCard from './TutorPremiumCard';
 import apiClient from '../../lib/apiauth';
-
-const lora = Lora({ subsets: ['latin'], weight: ['500', '600'], style: ['italic', 'normal'] });
 
 /* ---------------- TYPES ---------------- */
 interface ApiTutor {

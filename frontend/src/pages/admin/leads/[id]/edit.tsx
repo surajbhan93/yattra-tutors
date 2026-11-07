@@ -4,9 +4,7 @@ import AdminDashboardLayout from "@/components/admin-dashboard/AdminDashboardLay
 import leadService, { StudentLead } from "@/services/leadService";
 import { ArrowLeft, Save, Loader, MapPin, BookOpen, DollarSign, Clock } from "lucide-react";
 import toast from "react-hot-toast";
-import { Lora } from "next/font/google";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"] });
+import { lora } from "@/lib/fonts";
 
 const EditLeadPage = () => {
   const router = useRouter();

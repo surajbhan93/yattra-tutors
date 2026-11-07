@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import { Lora, DM_Sans } from "next/font/google";
+import { lora, dmSans } from "@/lib/fonts";
 import { city } from "@/components/seoIndia/locations/up/agra";
 
 // Import modular subcomponents from the same folder
@@ -15,9 +15,6 @@ import Reviews from "./Reviews";
 import FAQ from "./FAQ";
 import InternalLinks from "./InternalLinks";
 import CTA from "./CTA";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600", "700"] });
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 export default function AgraHomeTutorPage() {
   const pageTitle = `Home Tutor in ${city.name} | Best Verified Home Tuition | Yattra Tutors`;

@@ -8,9 +8,7 @@ import {
   Clock, Save, ArrowLeft, Loader, Zap, Phone, Mail
 } from "lucide-react";
 import { getAllStates, getCitiesForState } from "@/data/indianLocations";
-import { Lora } from "next/font/google";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"] });
+import { lora } from "@/lib/fonts";
 
 export default function CreateLeadPage() {
   const router = useRouter();

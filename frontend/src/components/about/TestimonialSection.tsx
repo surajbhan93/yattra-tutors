@@ -2,10 +2,7 @@ import { useEffect, useState } from "react";
 import apiClient from "@/lib/apiClient";
 import AddTestimonialForm from "@/components/testimonials/AddTestimonialForm";
 import { motion } from "framer-motion";
-import { Lora, DM_Sans } from "next/font/google";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"], style: ["italic", "normal"] });
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600"] });
+import { lora, dmSans } from "@/lib/fonts";
 
 interface Testimonial {
   _id: string;

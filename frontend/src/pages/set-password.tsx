@@ -2,14 +2,11 @@
 
 import { useRouter } from "next/router";
 import React, { useState } from "react";
-import { Lora, DM_Sans } from "next/font/google";
+import { lora, dmSans } from "@/lib/fonts";
 
 import NavBar from "@/components/navbar/NavBar";
 import Footer from "@/components/landing/Footer";
 import PasswordInput from "@/components/ui/PasswordInput";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"], style: ["italic", "normal"] });
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 const SetPasswordPage = () => {
   const [password, setPassword] = useState("");

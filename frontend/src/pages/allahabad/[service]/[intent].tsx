@@ -32,7 +32,6 @@
 //   intent: string;
 // }
 
-
 // /* =========================
 //    UX SIGNAL HELPERS
 // ========================= */
@@ -153,13 +152,8 @@
 //       {/* 🔥 NAVBAR */}
 //       <NavBar />
 
-
 //       {/* 🔥 PAGE CONTENT */}
 //     <main className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-100 overflow-hidden">
-
-
-
-
 
 //   {/* ================= HERO ================= */}
 //   <section className="relative bg-gradient-to-br from-indigo-700 via-purple-600 to-pink-600 text-white overflow-hidden">
@@ -226,12 +220,10 @@
 //   </p>
 // )}
 
-
 //     {/* ================= SUBJECTS ================= */}
 //           <h2 className="mt-14 text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">
 //         Subjects Available
 //       </h2>
-
 
 //   <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
 //   {SUBJECTS.slice(0, 15).map((subject, i) => (
@@ -269,7 +261,6 @@
 //   ))}
 // </div>
 
-
 //        {intentData?.benefits && (
 //             <>
 //               <h2 className="mt-16 text-2xl font-bold text-gray-900">
@@ -291,7 +282,6 @@
 //               </ul>
 //             </>
 //           )}
-
 
 // {/*  */}
 
@@ -383,7 +373,6 @@
 //     })}
 //   </div>
 // </section>
-
 
 //     {/* ================= WHY US ================= */}
 //   <h2 className="mt-20 text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">
@@ -479,7 +468,6 @@
 
 //   <AllahabadFAQSchema area={location} intent={intent} />
 
-
 //       {/* 🔥 FOOTER */}
 //       <Footer />
 //     </>
@@ -522,8 +510,6 @@
 //   };
 // };
 
-
-
 import { GetStaticPaths, GetStaticProps } from "next";
 import dynamic from "next/dynamic";
 import { ALLAHABAD_LOCATIONS, INTENTS } from "@/lib/allahabad/seo.config";
@@ -543,10 +529,7 @@ import {
   Star,
   HelpCircle,
 } from "lucide-react";
-import { Lora, DM_Sans } from "next/font/google";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"], style: ["italic", "normal"] });
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600"] });
+import { lora, dmSans } from "@/lib/fonts";
 
 // Lazy-loaded Below-the-fold heavy components for Core Web Vitals Optimization
 const GoogleBusinessProfileSection = dynamic(

@@ -12,18 +12,11 @@ interface HeroSectionProps {
   ctaText?: string;
   imageUrl?: string;
 }
-import { Playfair_Display } from "next/font/google";
+import { playfair } from "@/lib/fonts";
 import dynamic from "next/dynamic";
 
 const DynamicLightsThree = dynamic(() => import("@/components/tutors/DynamicLightsThree"), {
   ssr: false,
-});
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["700"],
-  display: "swap",
-  preload: true,
 });
 
 const cities = [

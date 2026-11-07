@@ -1,9 +1,7 @@
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight } from "lucide-react";
-import { Lora } from "next/font/google";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"] });
+import { lora } from "@/lib/fonts";
 
 export default function PaymentSuccessPage() {
   const router = useRouter();

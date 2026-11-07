@@ -6,9 +6,7 @@ import AdminDashboardLayout from "@/components/admin-dashboard/AdminDashboardLay
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import { Search, Filter, UserCheck, Clock, CheckCircle, XCircle, Eye, Download, Mail, Phone, MapPin, AlertCircle, LayoutDashboard } from 'lucide-react';
 import { displayFormattedPhone } from "@/lib/phoneUtils";
-import { Lora } from "next/font/google";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"] });
+import { lora } from "@/lib/fonts";
 
 interface TutorApplication {
   _id: string;

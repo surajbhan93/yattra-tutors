@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
 import { Star, Users, IndianRupee } from "lucide-react";
-import { Lora } from "next/font/google";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"] });
+import { lora } from "@/lib/fonts";
 
 interface Props {
   tutor: any;

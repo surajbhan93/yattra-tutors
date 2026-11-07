@@ -2,9 +2,7 @@ import { Banknote, Hourglass, TrendingUp } from 'lucide-react';
 import React, { useState } from 'react';
 
 import Button from '../ui/Button';
-import { Lora } from 'next/font/google';
-
-const lora = Lora({ subsets: ['latin'], weight: ['500', '600'] });
+import { lora } from "@/lib/fonts";
 
 // --- Mock Data ---
 const statsCards = [

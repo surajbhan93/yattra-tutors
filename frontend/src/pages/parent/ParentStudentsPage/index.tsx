@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import ParentDashboardLayout from "@/layouts/ParentDashboardLayout";
 import apiClient from "@/lib/apiClient";
-import { Lora } from "next/font/google";
+import { lora } from "@/lib/fonts";
 
 // Icons
 import {
@@ -25,8 +25,6 @@ import {
   Tooltip,
   CartesianGrid,
 } from "recharts";
-
-const lora = Lora({ subsets: ["latin"], weight: ["500", "600"] });
 
 /* ======================
    TYPES
