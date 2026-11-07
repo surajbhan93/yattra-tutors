@@ -1162,8 +1162,15 @@ export default function CityHubPage({ city }: Props) {
   );
 }
 
+// These cities have their own dedicated, custom-built page routes
+// (e.g. pages/allahabad, pages/delhi, pages/gurugram) which fully replace
+// this generic template for them, so they must not also be generated here.
+const DEDICATED_CITY_ROUTES = ['allahabad', 'delhi', 'gurugram'];
+
 export const getStaticPaths: GetStaticPaths = async () => ({
-  paths: ORDERED_CITIES.map((city) => ({ params: { city } })),
+  paths: ORDERED_CITIES
+    .filter((city) => !DEDICATED_CITY_ROUTES.includes(city))
+    .map((city) => ({ params: { city } })),
   fallback: 'blocking',
 });
 
